@@ -3,7 +3,7 @@ name: Deploy to AWS EC2
 on:
   push:
     branches:
-      - test  # Cambia a "test" si deseas que
+      - test  # Cambia a "test" 
 
 jobs:
   deploy:
