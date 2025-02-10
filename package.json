@@ -13,7 +13,9 @@
   "version": "1.0.0",
   "description": "This microservice allows **updating lists** in a task management system.\r It provides a REST API for modifying existing lists in the database, ensuring efficient updates.",
   "main": "src/server.js",
- 
+  "scripts": {
+    "start": "node src/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CinthiaDayanara/lists-update-service.git"
