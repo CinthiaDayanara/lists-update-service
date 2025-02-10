@@ -1,19 +1,20 @@
-const { gql } = require("apollo-server");
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type List {
     id: ID!
-    board_id: Int!
-    name: String!
-    position: Int!
+    nombre: String!
+    descripcion: String
+    fecha_creacion: String
   }
 
   type Query {
+    getLists: [List]
     getList(id: ID!): List
   }
 
   type Mutation {
-    updateList(id: ID!, name: String, position: Int): List
+    updateList(id: ID!, nombre: String, descripcion: String): List
   }
 `;
 

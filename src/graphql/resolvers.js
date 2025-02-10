@@ -1,32 +1,33 @@
 const List = require("../models/List");
-const { validateListUpdate } = require("../utils/validators");
 
 const resolvers = {
   Query: {
+    // Obtener todas las listas
+    getLists: async () => {
+      return await List.findAll();
+    },
+    // Obtener una lista por ID
     getList: async (_, { id }) => {
       return await List.findByPk(id);
-    }
+    },
   },
+
   Mutation: {
-    updateList: async (_, { id, name, position }) => {
-      try {
-        const list = await List.findByPk(id);
-        if (!list) throw new Error("Lista no encontrada.");
-
-        // Validar datos de entrada
-        validateListUpdate({ id, name, position });
-
-        // Actualizar solo los campos que fueron enviados
-        if (name !== undefined) list.name = name;
-        if (position !== undefined) list.position = position;
-        
-        await list.save();
-        return list;
-      } catch (error) {
-        throw new Error(error.message);
+    // Actualizar una lista por ID
+    updateList: async (_, { id, nombre, descripcion }) => {
+      const lista = await List.findByPk(id);
+      if (!lista) {
+        throw new Error("❌ Lista no encontrada");
       }
-    }
-  }
+
+      // Solo actualizar los valores proporcionados
+      if (nombre) lista.nombre = nombre;
+      if (descripcion) lista.descripcion = descripcion;
+
+      await lista.save();
+      return lista;
+    },
+  },
 };
 
 module.exports = resolvers;
