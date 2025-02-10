@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateList } = require("../controllers/Listcontroller");
+const { updateList } = require("../controllers/Listcontrollers");
 
 const router = express.Router();
 
