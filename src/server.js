@@ -18,7 +18,7 @@ async function startServer() {
   sequelize.sync()
     .then(() => {
       app.listen({ port: process.env.PORT || 5005 }, () => {
-        console.log(`🚀 Servidor GraphQL corriendo en http://localhost:5001${server.graphqlPath}`);
+        console.log(`🚀 Servidor GraphQL corriendo en http://localhost:5005${server.graphqlPath}`);
       });
     })
     .catch(err => console.error("❌ Error al sincronizar la base de datos:", err));
