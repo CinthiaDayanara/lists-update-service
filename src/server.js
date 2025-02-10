@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const listRoutes = require("./routes/listsRoutes");
+const listRoutes = require("./Routes/ListsRoutes");
 
 const app = express();
 app.use(express.json());
