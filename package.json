@@ -2,6 +2,7 @@
   "dependencies": {
     "apollo-server": "^3.13.0",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "graphql": "^16.10.0",
     "joi": "^17.13.3",
     "pg": "^8.13.1",
@@ -13,10 +14,8 @@
   "description": "This microservice allows **updating lists** in a task management system.\r It provides a REST API for modifying existing lists in the database, ensuring efficient updates.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"},
-  
-  "devDependencies": {},
-  
+    "start": "node src/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CinthiaDayanara/lists-update-service.git"
